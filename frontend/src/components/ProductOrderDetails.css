@@ -1,0 +1,21 @@
+.product-order-details-div {
+  display: flex;
+  justify-content: space-between;
+}
+.product-order-details-body {
+  display: flex;
+}
+.product-order-details-image {
+  width: 70px;
+}
+.product-order-details-brand {
+  font-size: x-small;
+}
+.product-order-details-name {
+  font-size: smaller;
+}
+.product-order-details-price {
+  font-size: smaller;
+  font-weight: 600;
+  min-width: 75px;
+}

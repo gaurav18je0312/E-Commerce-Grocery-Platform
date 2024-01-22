@@ -1,0 +1,29 @@
+.cart-header {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.payment-column {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.payment-header {
+  font-size: medium;
+  font-weight: 700;
+}
+.cart-bold {
+  font-weight: 700;
+}
+.delivery-body {
+  font-size: large;
+}
+.checkout-btn {
+  width: 98%;
+  border-radius: 10px;
+}
+.cart-product-item {
+  font-weight: 700;
+  color: rgb(134, 134, 134);
+  font-size: medium;
+}

@@ -1,0 +1,55 @@
+.product-order-div {
+  border: 1px solid rgb(134, 132, 132);
+  border-radius: 10px;
+}
+.product-order-img {
+  width: 100px;
+  padding: 10px;
+  border-right: 1px solid rgb(134, 132, 132);
+}
+.product-order-body {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.product-order-detail {
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 120px;
+}
+.product-order-date {
+  font-size: small;
+  font-weight: 500;
+}
+.product-order-address-header {
+  font-weight: 500;
+}
+.product-order-details {
+  max-width: 300px;
+}
+.product-order-address {
+  padding: 1px;
+}
+.product-order-address-name {
+  font-size: smaller;
+  font-weight: 400;
+  padding-bottom: 0;
+}
+.product-order-address-location {
+  font-size: smaller;
+  font-weight: 400;
+}
+.product-order-address-phn {
+  font-size: smaller;
+  font-weight: 400;
+}
+.product-order-payment-header {
+  font-weight: 500;
+}
+.product-order-payment-name {
+  font-size: smaller;
+}
+.order-details-items {
+  padding-left: 1rem;
+  font-weight: 500;
+  color: gray;
+}

@@ -1,0 +1,126 @@
+.navbar-component {
+  top: 0;
+  position: sticky;
+  z-index: 10;
+}
+.header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  position: relative;
+}
+.home-logo-img {
+  border-radius: 5px;
+  height: 45px;
+  cursor: pointer;
+}
+.navbar-address {
+  font-family: "Signika Negative", sans-serif;
+  color: white;
+  margin-left: 1rem;
+  padding: 8px;
+  font-weight: 400;
+  vertical-align: middle;
+  border-radius: 10px;
+  margin-top: 2rem;
+  background-color: rgb(49, 49, 49);
+  font-size: 12px;
+}
+.search-bar {
+  min-width: 1000px;
+  vertical-align: auto;
+}
+.search-logo {
+  color: #a3a5a1;
+}
+.search-btn {
+  padding: 4px 5px 4.5px 10px;
+  border-radius: 10px 0px 0px 10px;
+  font-size: 15px;
+  background-color: white;
+  margin-right: 0;
+  border: 1px solid rgb(109, 191, 70);
+  border-right: 0;
+  font-size: small;
+}
+.search-input {
+  border-radius: 0px 10px 10px 0px;
+  padding: 4px;
+  padding-left: 10px;
+  font-size: 15px;
+  width: 20rem;
+  margin-top: 5px;
+  margin-left: 0;
+  border: 1px solid rgb(109, 191, 70);
+  border-left: 0;
+  font-size: smaller;
+}
+.search-input:focus {
+  outline: none;
+}
+.order-btn {
+  padding: 2px 1rem 2px 1rem;
+  background-color: rgb(49, 49, 49);
+  border: 0;
+  border-radius: 5px;
+}
+.account-btn {
+  padding: 2px 0.5rem 2px 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(49, 49, 49);
+  border: 0;
+}
+.cart-btn {
+  padding: 2px 1rem 2px 1rem;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(224, 65, 65);
+  border: 0;
+}
+.account-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 280px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.2s;
+}
+.account-menu-wrap.open-menu {
+  max-height: 350px;
+}
+.account-menu {
+  background-color: rgb(36, 36, 36);
+  color: white;
+  padding: 10px;
+  margin: 5px;
+}
+.user-info {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+.account-menu-link {
+  text-decoration: none;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.link-style {
+  width: 100%;
+  padding: 5px;
+}
+.link-style:hover {
+  background-color: rgb(56, 56, 56);
+}
+.user-info-name {
+  font-weight: 500;
+}
+.user-info-phn {
+  font-size: small;
+  color: #a3a5a1;
+}
+.user-info-email {
+  font-size: small;
+  color: #a3a5a1;
+}

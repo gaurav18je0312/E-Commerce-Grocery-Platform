@@ -1,0 +1,25 @@
+.category-page-filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgb(234, 233, 233);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px dotted rgb(48, 48, 48);
+}
+.filter-menu-wrap {
+  z-index: 5;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  right: 0;
+  width: 0px;
+  height: 650px;
+  overflow: hidden;
+  transition: width 0.2s;
+  border-radius: 10px 0 0 10px;
+}
+.filter-menu-wrap.filter-open-menu {
+  width: 350px;
+}

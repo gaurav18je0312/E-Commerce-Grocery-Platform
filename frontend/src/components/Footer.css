@@ -1,0 +1,8 @@
+.footer-div {
+  margin-top: auto;
+}
+.footer-content {
+  text-decoration: underline;
+  font-size: small;
+  cursor: pointer;
+}

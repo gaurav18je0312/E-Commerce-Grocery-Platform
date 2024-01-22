@@ -1,0 +1,28 @@
+.signup-div {
+  height: 100%;
+  width: 100%;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.signup-top-padding {
+  padding-top: 5vh;
+}
+.signup-logo {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.signup-card {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  margin: auto;
+}
+.signup-btn-color {
+  background-color: rgb(109, 191, 70);
+  color: white;
+}
+.signup-btn-color:hover {
+  background-color: rgb(87, 176, 45);
+  color: white;
+}

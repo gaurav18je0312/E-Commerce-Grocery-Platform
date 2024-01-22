@@ -1,0 +1,33 @@
+.login-div {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.login-top-padding {
+  padding-top: 18vh;
+}
+.login-logo {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.login-card {
+  max-width: 25rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: auto;
+}
+.login-btn-color {
+  background-color: rgb(109, 191, 70);
+  color: white;
+  width: 100px;
+}
+.login-btn-color:hover {
+  background-color: rgb(87, 176, 45);
+  color: white;
+
+}
+.forgot-link{
+  cursor: pointer;
+}

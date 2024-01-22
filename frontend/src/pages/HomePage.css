@@ -1,0 +1,14 @@
+.brand-store-body {
+  overflow-x: auto;
+}
+.brand-btn {
+  width: 200px;
+  height: 150px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 1rem;
+  cursor: pointer;
+}
+.brand-btn:hover {
+  box-shadow: 5px 5px 5px #c4c4c4;
+}

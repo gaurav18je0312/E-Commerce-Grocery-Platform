@@ -1,0 +1,30 @@
+.filter-menu-div {
+  height: 650px;
+  width: 350px;
+  background-color: rgb(251, 251, 251);
+}
+.filter-menu-header {
+  padding: 0.75rem;
+  font-weight: 600;
+}
+.filter-menu-category-header {
+  padding: 0.75rem;
+  font-weight: 500;
+}
+.filter-menu-category-input {
+  padding: 0.75rem;
+  padding-top: 0;
+  align-items: center;
+}
+.category-btn {
+  border-radius: 20px;
+  border: 1px solid rgb(139, 139, 139);
+  color: rgb(139, 139, 139);
+  margin: 0.25rem;
+}
+.price-field {
+  width: 100px;
+}
+.filter-menu-category {
+  width: 100%;
+}

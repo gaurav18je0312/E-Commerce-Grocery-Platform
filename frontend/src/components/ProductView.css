@@ -1,0 +1,8 @@
+.best-seller-div {
+  background-color: rgb(234, 233, 233);
+  min-height: 50vh;
+}
+.product-view-home {
+  flex-wrap: wrap;
+  justify-content: left;
+}

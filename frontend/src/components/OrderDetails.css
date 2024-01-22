@@ -1,0 +1,15 @@
+.order-details-title {
+  font-weight: 400;
+  font-size: xx-large;
+}
+.order-details-sub-title {
+  font-size: smaller;
+}
+.order-details-sub-total {
+  font-size: smaller;
+  justify-content: space-between;
+  font-weight: 400;
+}
+.order-details-bold {
+  font-weight: 700;
+}

@@ -1,0 +1,13 @@
+.complete-image {
+  width: 200px;
+  margin: auto;
+  padding-top: 2rem;
+}
+.complete-text {
+  width: 400px;
+  font-size: xx-large;
+  margin: auto;
+  text-align: center;
+  font-weight: 700;
+  padding-bottom: 2rem;
+}

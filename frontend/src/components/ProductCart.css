@@ -1,0 +1,27 @@
+.product-cart-image {
+  height: 120px;
+  width: fit-content;
+}
+.product-cart-brand {
+  font-size: small;
+  font-weight: 500;
+}
+.product-cart-price {
+  margin: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+.product-cart-right {
+  min-width: 110px;
+}
+.cart-add-btn {
+  border-radius: 10px 0 0 10px;
+}
+.cart-minus-btn {
+  border-radius: 0px 10px 10px 0px;
+}
+.product-cart-quantity {
+  font-weight: 600;
+  font-size: 20px;
+  vertical-align: middle;
+}
