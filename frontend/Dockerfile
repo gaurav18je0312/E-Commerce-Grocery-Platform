@@ -4,6 +4,6 @@ WORKDIR /frontend
 
 COPY . .
 
-RUN npm install vite@5.0.11
+RUN npm install vite@5.0.1
 
 CMD ["npm", "run", "dev"]
