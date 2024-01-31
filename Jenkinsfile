@@ -23,9 +23,9 @@ pipeline {
             agent any
             steps {
                 script {
-                    withEnv(["DATABASE_NAME=ecommerce", "DATABASE_USER=root", "DATABASE_PASS=root", "DATABASE_HOST=localhost"]) {
-                        sh 'cd backend && python3 manage.py runserver'
-                    }
+                    sh 'python3 -m venv venv'
+                    sh 'source venv/bin/activate'
+                    sh 'cd backend && pip install -r requirements.txt && python3 manage.py runserver &'
                 }
             }
         }
