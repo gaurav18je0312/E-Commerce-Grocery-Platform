@@ -7,6 +7,7 @@ COPY . .
 ENV DATABASE_NAME=ecommerce
 ENV DATABASE_USER=root
 ENV DATABASE_PASS=root
+ENV DATABASE_HOST=db
 
 RUN pip install -r requirements.txt
 
