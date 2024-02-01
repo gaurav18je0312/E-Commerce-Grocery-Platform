@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     sh 'cd frontend && npm install vite'
-                    sh 'cd frontend && npm run dev'
+                    sh 'cd frontend && npm run dev &'
                 }
             }
         }
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Stop and remove the container
-                    sh 'deactivate'
+                    sh 'exit'
                 }
                 deleteDir()
             }
