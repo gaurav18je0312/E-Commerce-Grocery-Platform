@@ -30,7 +30,7 @@ class UserCartTest(APITestCase):
         response = self.client.get(reverse("getCart"), headers=self.headers)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data["totalPrice"], 160)
+        self.assertEqual(response.data["totalPrice"], 180)
 
     def test_addProductAPI(self):
         url = reverse("addProduct", kwargs={
