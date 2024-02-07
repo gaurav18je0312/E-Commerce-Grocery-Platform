@@ -36,11 +36,27 @@ class UserOrderTest(APITestCase):
             "delivered_address": "testaddress"
         }
         response = self.client.post(reverse("createOrder"), data, format='json',headers=self.headers)
-
+    
         self.assertEqual(response.status_code, 201)
         self.assertEqual(response.data["Result"], "Order Placed.")
 
     def test_orderHistoryAPI(self):
         response = self.client.get(reverse("orderHistory"), headers=self.headers)
-
+        self.assertEqual(response.status_code, 200)
+        
+    def test_productByOrderAPI(self):
+        data = {
+            'amount':180,
+            'payment_mode':"UPI",
+            'delivered_name':"test",
+            "delivered_phone_number": 1234567890,
+            "delivered_address": "testaddress"
+        }
+        response = self.client.post(reverse("createOrder"), data, format='json',headers=self.headers)
+        response = self.client.get(reverse("orderHistory"), headers=self.headers)
+        url = reverse("productByOrder", kwargs={
+            'id': response.data[0]['id']
+        })
+        response = self.client.get(url, headers=self.headers)
+        
         self.assertEqual(response.status_code, 200)
