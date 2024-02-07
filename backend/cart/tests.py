@@ -49,4 +49,15 @@ class UserCartTest(APITestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data["Result"], "Product removed.")
+        
+    def test_removeCartAPI(self):
+        url = reverse("removeCart")
+        response = self.client.delete(url, headers=self.headers)
+        
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data["Result"], "Cart removed.")
+        
+        getResponse = self.client.get(reverse("getCart"), headers=self.headers)
+        
+        self.assertEqual(len(getResponse.data["cart"]), 0)
 
