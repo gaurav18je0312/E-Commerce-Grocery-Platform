@@ -11,6 +11,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'green-basket-github-token', variable: 'TOKEN')]){
                         checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: "https://<GitHubUsername>:${TOKEN}@github.com/gaurav18je0312/Green-Basket.git"]]])
                     }
+
                 }
             }
         }
