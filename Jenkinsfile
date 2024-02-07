@@ -1,18 +1,10 @@
 pipeline {
     agent any
-    // environment {
-    //     GITHUB_TOKEN = credentials('green-basket-github-token')
-    // }
     stages {
         stage('Git Clone') {
             agent any
             steps {
-                script {
-                    withCredentials([string(credentialsId: 'green-basket-github-token', variable: 'TOKEN')]){
-                        checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: "https://<GitHubUsername>:${TOKEN}@github.com/gaurav18je0312/Green-Basket.git"]]])
-                    }
-
-                }
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gittoken', url: 'https://github.com/gaurav18je0312/Green-Basket.git']])
             }
         }
 
@@ -26,18 +18,10 @@ pipeline {
                 }
             }
         }
-
-        // Add more stages for additional steps such as testing and deployment
-
-        stage('Cleanup') {
-            agent any
-            steps {
-                script {
-                    // Stop and remove the container
-                    sh 'exit'
-                }
-                deleteDir()
-            }
+    }
+    post {
+        always{
+            deleteDir()
         }
     }
 }
