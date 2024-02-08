@@ -93,13 +93,23 @@ function ProductHome({
               Delete
             </button>
           )}
-          {cartQuantity === 0 && !isAuth && (
+          {quantity>0 && cartQuantity === 0 && !isAuth && (
             <button
               type="button"
               className="btn btn-outline-danger product-home-add-btn"
               onClick={() => addToCart(id)}
             >
               Add
+            </button>
+          )}
+          {quantity === 0 && cartQuantity === 0 && !isAuth && (
+            <button
+              type="button"
+              className="btn btn-outline-danger product-home-add-btn"
+              onClick={() => addToCart(id)}
+              disabled
+            >
+              Out of Stock
             </button>
           )}
           {cartQuantity !== 0 && (

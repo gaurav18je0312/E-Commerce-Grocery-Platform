@@ -20,6 +20,7 @@ function ProductPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [show, setShow] = useState(false);
   const [modalShow, setModalShow] = useState(false);
+  const [quantity, setQuantity] = useState(0)
   // Function to show the modal
   const handleShow = () => setShow(true);
   // UseEffect to check the admin 
@@ -35,6 +36,7 @@ function ProductPage() {
       .then((response) => {
         const data = response.data;
         console.log(data);
+        setQuantity(data["product_quantity"])
         setProduct(data);
       })
       .catch((error) => {
@@ -88,7 +90,16 @@ function ProductPage() {
                     </div>
                   )}
                   <div className="py-3 product-page-btn">
-                    {!isAdmin && cartQuantity === 0 && (
+                    {quantity===0 && !isAdmin && cartQuantity === 0 && (
+                      <button
+                        className="btn btn-danger product-page-add-btn"
+                        onClick={() => addToCart(id)}
+                        disabled
+                      >
+                        Out of Stock
+                      </button>
+                    )}
+                    {quantity>0 && !isAdmin && cartQuantity === 0 && (
                       <button
                         className="btn btn-danger product-page-add-btn"
                         onClick={() => addToCart(id)}
