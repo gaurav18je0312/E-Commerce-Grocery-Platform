@@ -23,5 +23,23 @@ pipeline {
         always{
             deleteDir()
         }
+        success {
+            echo 'Build successful'
+            emailext (
+                body: "Build Number: ${currentBuild.number}\n",
+                recipientProviders: [culprits()],
+                subject: 'Build Success',
+                to: 'gaurav.aggarwal@beehyv.com'
+            )
+        }
+        failure {
+            echo 'Build failed'
+            emailext (
+                body: "Build Number: ${currentBuild.number}\n",
+                recipientProviders: [culprits()],
+                subject: 'Build Failure',
+                to: 'gaurav.aggarwal@beehyv.com'
+            )
+        }
     }
 }
