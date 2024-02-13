@@ -31,7 +31,7 @@ function PaymentStepper({ onHide }) {
     };
     // Send a POST request to create the order
     axios
-      .post("http://127.0.0.1:8000/order/createOrder/", body, {
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/order/createOrder/`, body, {
         headers: headers,
       })
       .then((response) => {

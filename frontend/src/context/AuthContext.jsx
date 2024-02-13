@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
       };
       // Fetch user data from the server
       axios
-        .get("http://127.0.0.1:8000/profile/", { headers: headers })
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/profile/`, { headers: headers })
         .then((response) => {
           setData({ user: response.data, isloading: false });
           console.log("user updated.");
@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }) => {
     };
     // Request a new access token
     axios
-      .post("http://127.0.0.1:8000/token/refresh/", body)
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/token/refresh/`, body)
       .then((response) => {
         const newaccess = response.data.access;
         setAuthToken({ access: newaccess, refresh: refresh });

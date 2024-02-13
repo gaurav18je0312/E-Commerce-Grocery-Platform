@@ -10,7 +10,7 @@ function ProductCart({ id, cart_quantity }) {
   useEffect(() => {
     // Send the GET to get the product details by id
     axios
-      .get(`http://127.0.0.1:8000/products/getProduct/${id}/`, null)
+      .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/getProduct/${id}/`, null)
       .then((response) => {
         const data = response.data;
         console.log(data);
@@ -33,7 +33,7 @@ function ProductCart({ id, cart_quantity }) {
                 alt="product-cart-image"
                 className="product-img"
                 height="100%"
-                onClick={() => navigate(`/home/product/${id}`)}
+                onClick={() => navigate(`/product/${id}`)}
               />
             </div>
             <div className="product-cart-detail m-2 p-2 mt-0 pt-0 me-0 pe-0">

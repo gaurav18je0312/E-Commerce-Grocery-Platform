@@ -19,7 +19,7 @@ function HomePage() {
   // Function to get the products details according the page number
   function getProducts(page) {
     axios
-      .get(`http://127.0.0.1:8000/products/getProducts/page=${page}`)
+      .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/getProducts/page=${page}`)
       .then((response) => {
         const data = response.data;
         setProduct(data["products"]);
@@ -53,25 +53,25 @@ function HomePage() {
           <div className="d-flex m-2 brand-store-body">
             <div
               className="brand-btn d-flex justify-content-center"
-              onClick={() => MoveToBrand("/home/brand/Amul")}
+              onClick={() => MoveToBrand("/brand/Amul")}
             >
               <img src="/category/amul.webp" alt="amul" height="100%" />
             </div>
             <div
               className="brand-btn d-flex justify-content-center p-4"
-              onClick={() => MoveToBrand("/home/brand/Bauli")}
+              onClick={() => MoveToBrand("/brand/Bauli")}
             >
               <img src="/category/bauli.webp" alt="bauli" height="100%" />
             </div>
             <div
               className="brand-btn d-flex justify-content-center"
-              onClick={() => MoveToBrand("/home/brand/Dettol")}
+              onClick={() => MoveToBrand("/brand/Dettol")}
             >
               <img src="/category/dettol.webp" alt="dettol" height="100%" />
             </div>
             <div
               className="d-flex justify-content-center brand-btn"
-              onClick={() => MoveToBrand("/home/brand/Coca-Cola")}
+              onClick={() => MoveToBrand("/brand/Coca-Cola")}
             >
               <img
                 src="/category/coca-cola.webp"
@@ -81,7 +81,7 @@ function HomePage() {
             </div>
             <div
               className="d-flex justify-content-center p-4 brand-btn"
-              onClick={() => MoveToBrand("/home/brand/Loreal")}
+              onClick={() => MoveToBrand("/brand/Loreal")}
             >
               <img src="/category/loreal.webp" alt="loreal" height="100%" />
             </div>

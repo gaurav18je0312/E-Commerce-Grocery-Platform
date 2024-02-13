@@ -27,7 +27,7 @@ function ChangePasswordModal({ chngPass, setChngPass }) {
     };
     // Send a PUT request to the server
     axios
-      .put("http://127.0.0.1:8000/profile/changePassword/", body, {
+      .put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/profile/changePassword/`, body, {
         headers: headers,
       })
       .then((response) => {

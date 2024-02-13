@@ -46,7 +46,7 @@ function Navbar() {
     e.preventDefault();
     setCategoryPage((prev) => !prev);
     console.log("searching");
-    navigate(`/home/search/${e.target["search"].value}`);
+    navigate(`/search/${e.target["search"].value}`);
   };
   // Funtion to toggle the account menu
   const accountToggle = () => {
@@ -68,7 +68,7 @@ function Navbar() {
               src="/images/greenbasket.PNG"
               alt="logo"
               className="home-logo-img me-3"
-              onClick={() => navigate("/home/")}
+              onClick={() => navigate("/")}
             />
             {user && !isAuth && (
               <span className="navbar-header navbar-address">
@@ -131,7 +131,7 @@ function Navbar() {
                     <div className="link-style">
                       <a
                         className="account-menu-link"
-                        onClick={() => navigate("/home/orderHistory/")}
+                        onClick={() => navigate("/orderHistory/")}
                       >
                         <i className="fa-solid fa-box-open m-1 me-0"></i>
                         <span className="ms-3">My Orders</span>
@@ -187,7 +187,7 @@ function Navbar() {
                 type="button"
                 variant="danger"
                 size="sm"
-                onClick={() => navigate("/home/cart/")}
+                onClick={() => navigate("/cart/")}
               >
                 <i className="fa-solid fa-cart-shopping"></i>{" "}
                 <Badge bg="light" text="dark">

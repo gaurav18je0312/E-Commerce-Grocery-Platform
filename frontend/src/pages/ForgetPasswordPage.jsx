@@ -14,7 +14,7 @@ export default function ForgetPasswordPage() {
   useEffect(() => {
     if (isLoading===false){
       if (user){
-        navigate("/home")
+        navigate("/")
       }
     }
   }, [isLoading])
@@ -29,7 +29,7 @@ export default function ForgetPasswordPage() {
     };
     // Send a PUT request to the server for password reset
     axios
-      .put("http://127.0.0.1:8000/profile/forgetPassword/", body, {
+      .put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/profile/forgetPassword/`, body, {
         headers: headers,
       })
       .then((response) => {

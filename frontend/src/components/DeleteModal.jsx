@@ -29,7 +29,7 @@ function DeleteModal({
       };
       // Send a DELETE request to delete the product
       axios
-        .delete(`http://127.0.0.1:8000/products/deleteProduct/${id}`, {
+        .delete(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/deleteProduct/${id}`, {
           headers: headers,
         })
         .then((response) => {
@@ -41,12 +41,12 @@ function DeleteModal({
           if (UpdateByCategory) {
             UpdateByCategory();
           } else {
-            navigate("/home");
+            navigate("/");
           }
         })
         .catch((error) => {
           console.error(error);
-          navigate("/home");
+          navigate("/");
         });
     }
   };

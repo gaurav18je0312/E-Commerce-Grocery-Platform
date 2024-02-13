@@ -40,7 +40,7 @@ function AddProductModal({
     };
     // Send a POST request to add a new product
     axios
-      .post("http://127.0.0.1:8000/products/addProduct/", product, {
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/addProduct/`, product, {
         headers: headers,
       })
       .then((response) => {
