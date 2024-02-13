@@ -14,7 +14,7 @@ export default function LoginPage() {
   useEffect(() => {
     if (isLoading===false){
       if (user){
-        navigate("/home")
+        navigate("/")
       }
     }
   }, [isLoading])
@@ -32,7 +32,7 @@ export default function LoginPage() {
     };
     // Send a POST request to the server for user login
     axios
-      .post("http://127.0.0.1:8000/login/", body, { headers: headers })
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/login/`, body, { headers: headers })
       .then((response) => {
         const data = response.data;
         console.log(data);
@@ -40,7 +40,7 @@ export default function LoginPage() {
         localStorage.setItem("authTokens", JSON.stringify(data["token"]));
         // Call the loginAuthToken function to set the user's authentication token
         loginAuthToken(data["token"]);
-        navigate("/home/");
+        navigate("/");
       })
       .catch((error) => {
         console.error("error", error);

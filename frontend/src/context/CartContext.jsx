@@ -34,7 +34,7 @@ export const CartProvider = ({ children }) => {
       };
       // Fetch the user's shopping cart data
       axios
-        .get("http://127.0.0.1:8000/cart/getCart/", { headers: headers })
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/cart/getCart/`, { headers: headers })
         .then((response) => {
           console.log(response.data);
           setCart(response.data["cart"]);
@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
       };
       // Send a request to add the product to the cart
       axios
-        .post(`http://127.0.0.1:8000/cart/addProduct/${id}/`, null, {
+        .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/cart/addProduct/${id}/`, null, {
           headers: headers,
         })
         .then((response) => {
@@ -94,7 +94,7 @@ export const CartProvider = ({ children }) => {
       };
       // Send a request to remove the product from the cart
       axios
-        .post(`http://127.0.0.1:8000/cart/removeProduct/${id}/`, null, {
+        .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/cart/removeProduct/${id}/`, null, {
           headers: headers,
         })
         .then((response) => {
@@ -118,7 +118,7 @@ export const CartProvider = ({ children }) => {
     };
     // Send a request to remove the entire cart
     axios
-      .delete("http://127.0.0.1:8000/cart/removeCart/", { headers: headers })
+      .delete(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/cart/removeCart/`, { headers: headers })
       .then((response) => {
         console.log(response);
         setToastContent("Cart cleared Successfully");

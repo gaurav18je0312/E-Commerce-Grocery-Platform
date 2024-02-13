@@ -17,7 +17,7 @@ function OrderDetails(props) {
       };
       // Send the GET request to get products by order id
       axios
-        .get(`http://127.0.0.1:8000/order/productByOrder/${props.id}`, {
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/order/productByOrder/${props.id}`, {
           headers: headers,
         })
         .then((response) => {

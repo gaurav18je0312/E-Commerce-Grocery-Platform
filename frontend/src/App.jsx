@@ -30,7 +30,7 @@ function App() {
                     <CartPage />
                   </UserRoute>
                 }
-                path="home/cart"
+                path="cart"
               />
               <Route
                 element={
@@ -38,10 +38,10 @@ function App() {
                     <OrderHistoryPage />
                   </UserRoute>
                 }
-                path="home/orderHistory"
+                path="orderHistory"
               />
-              <Route element={<CategoryPage />} path="home/:filter/:category" />
-              <Route element={<ProductPage />} path="home/product/:id" />
+              <Route element={<CategoryPage />} path=":filter/:category" />
+              <Route element={<ProductPage />} path="product/:id" />
             </Routes>
           </CartProvider>
         </AuthProvider>

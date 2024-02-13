@@ -32,7 +32,7 @@ function ProductPage() {
   // Fucction to update the products details
   const updateProduct = () => {
     axios
-      .get(`http://127.0.0.1:8000/products/getProduct/${id}/`, null)
+      .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/getProduct/${id}/`, null)
       .then((response) => {
         const data = response.data;
         console.log(data);

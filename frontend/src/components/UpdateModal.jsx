@@ -34,7 +34,7 @@ function UpdateModal({
     };
     // Send the PUT request to update the product
     axios
-      .put(`http://127.0.0.1:8000/products/updateProduct/${id}`, product, {
+      .put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/updateProduct/${id}`, product, {
         headers: headers,
       })
       .then((response) => {
@@ -61,7 +61,7 @@ function UpdateModal({
   useEffect(() => {
     // Send the GET to get the product details
     axios
-      .get(`http://127.0.0.1:8000/products/getProduct/${id}/`, null)
+      .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/getProduct/${id}/`, null)
       .then((response) => {
         const data = response.data;
         setProduct(data);
