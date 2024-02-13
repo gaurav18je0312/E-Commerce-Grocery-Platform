@@ -23,7 +23,7 @@ function App() {
               <Route element={<LoginPage />} path="login" />
               <Route element={<SignupPage />} path="signUp" />
               <Route element={<ForgetPasswordPage />} path="forgotPassword" />
-              <Route exact element={<HomePage />} path="home" />
+              <Route exact element={<HomePage />} path="" />
               <Route
                 element={
                   <UserRoute>
