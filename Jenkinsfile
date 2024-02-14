@@ -20,7 +20,6 @@ pipeline {
             echo 'Build successful'
             emailext (
                 body: "Green-Basket-Main\nBuild Number: ${currentBuild.number}\n",
-                recipientProviders: [culprits()],
                 subject: 'Jenkins Build Success',
                 to: 'gaurav.aggarwal@beehyv.com'
             )
@@ -29,7 +28,6 @@ pipeline {
             echo 'Build failed'
             emailext (
                 body: "Green-Basket-Main\nBuild Number: ${currentBuild.number}\n",
-                recipientProviders: [culprits()],
                 subject: 'Jenkins Build Failure',
                 to: 'gaurav.aggarwal@beehyv.com'
             )
