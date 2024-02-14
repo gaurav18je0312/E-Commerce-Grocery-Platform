@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Git Clone') {
-            agent any
-            steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gittoken', url: 'https://github.com/gaurav18je0312/Green-Basket.git']])
-            }
-        }
-
         stage('Build and test Backend') {
             agent any
             steps {
