@@ -28,7 +28,7 @@ pipeline {
         failure {
             echo 'Build failed'
             emailext (
-                body: "Green-Basket-Main\Build Number: ${currentBuild.number}\n",
+                body: "Green-Basket-Main\nBuild Number: ${currentBuild.number}\n",
                 recipientProviders: [culprits()],
                 subject: 'Jenkins Build Failure',
                 to: 'gaurav.aggarwal@beehyv.com'
