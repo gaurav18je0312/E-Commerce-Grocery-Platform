@@ -44,7 +44,7 @@ function CategoryPage() {
   const UpdateByCategory = () => {
     axios
       .get(
-        `http://127.0.0.1:8000/products/category=${ctg}/brand=${brand}/price/min=${minPrice}/max=${maxPrice}/sort=${sort}/page=${page}`
+        `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/category=${ctg}/brand=${brand}/price/min=${minPrice}/max=${maxPrice}/sort=${sort}/page=${page}`
       )
       .then((response) => {
         setProducts(response.data["products"]);
@@ -58,7 +58,7 @@ function CategoryPage() {
   const UpdateBySearch = (value) => {
     if (value != null) {
       axios
-        .get(`http://127.0.0.1:8000/products/search/${value}/page=${page}`)
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/products/search/${value}/page=${page}`)
         .then((response) => {
           console.log(response.data);
           setProducts(response.data["products"]);

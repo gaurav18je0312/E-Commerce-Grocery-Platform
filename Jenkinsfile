@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Git Clone') {
-            agent any
-            steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gittoken', url: 'https://github.com/gaurav18je0312/Green-Basket.git']])
-            }
-        }
-
         stage('Build and test Backend') {
             agent any
             steps {
@@ -26,18 +19,16 @@ pipeline {
         success {
             echo 'Build successful'
             emailext (
-                body: "Build Number: ${currentBuild.number}\n",
-                recipientProviders: [culprits()],
-                subject: 'Build Success',
+                body: "Green-Basket-Main\nBuild Number: ${currentBuild.number}\n",
+                subject: 'Jenkins Build Success',
                 to: 'gaurav.aggarwal@beehyv.com'
             )
         }
         failure {
             echo 'Build failed'
             emailext (
-                body: "Build Number: ${currentBuild.number}\n",
-                recipientProviders: [culprits()],
-                subject: 'Build Failure',
+                body: "Green-Basket-Main\nBuild Number: ${currentBuild.number}\n",
+                subject: 'Jenkins Build Failure',
                 to: 'gaurav.aggarwal@beehyv.com'
             )
         }

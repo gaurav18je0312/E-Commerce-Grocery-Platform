@@ -14,7 +14,7 @@ export default function SignupPage() {
   useEffect(() => {
     if (isLoading===false){
       if (user){
-        navigate("/home")
+        navigate("/")
       }
     }
   }, [isLoading])
@@ -42,7 +42,7 @@ export default function SignupPage() {
     };
     // Send the POST request to Sign Up the user
     axios
-      .post("http://127.0.0.1:8000/signup/", body, { headers: headers })
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/signup/`, body, { headers: headers })
       .then((response) => {
         const data = response.data;
         console.log(data);

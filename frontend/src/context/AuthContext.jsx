@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
       };
       // Fetch user data from the server
       axios
-        .get("http://127.0.0.1:8000/profile/", { headers: headers })
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/profile/`, { headers: headers })
         .then((response) => {
           setData({ user: response.data, isloading: false });
           console.log("user updated.");
@@ -67,11 +67,11 @@ export const AuthProvider = ({ children }) => {
     };
     // Request a new access token
     axios
-      .post("http://127.0.0.1:8000/token/refresh/", body)
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/token/refresh/`, body)
       .then((response) => {
         const newaccess = response.data.access;
         setAuthToken({ access: newaccess, refresh: refresh });
-        localStorage.setItem("authTokens", JSON.stringify(AuthToken));
+        localStorage.setItem("authTokens", JSON.stringify({ access: newaccess, refresh: refresh }));
         console.log("token updated.");
         if (data.user===null) {
           console.log("user is null")
@@ -79,7 +79,9 @@ export const AuthProvider = ({ children }) => {
         }
       })
       .catch((error) => {
-        console.error(error.message);
+        console.error("token error: ", error.message);
+        setData({ ...data,  isloading:true});
+        navigate("/login/");
       });
   };
   // Initial effect to check for stored tokens and update if available

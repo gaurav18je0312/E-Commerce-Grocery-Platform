@@ -18,7 +18,7 @@ function OrderHistoryPage() {
         Authorization: `Bearer ${AccessToken}`,
       };
       axios
-        .get("http://127.0.0.1:8000/order/orderHistory", {
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/order/orderHistory`, {
           headers: headers,
         })
         .then((response) => {

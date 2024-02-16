@@ -45,7 +45,7 @@ function UpdateProfileModal(props) {
     };
     // Send the PUT request to update the user profile
     axios
-      .put("http://127.0.0.1:8000/profile/update/", user, { headers: headers })
+      .put(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/profile/update/`, user, { headers: headers })
       .then((response) => {
         console.log(response.data);
         updateUser({ access: AccessToken });

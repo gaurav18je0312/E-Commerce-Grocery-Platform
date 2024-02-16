@@ -32,7 +32,7 @@ function AddAdminModal(props) {
     };
     // Send a POST request to the server
     axios
-      .post("http://127.0.0.1:8000/adminSignUp/", body, { headers: headers })
+      .post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/adminSignUp/`, body, { headers: headers })
       .then((response) => {
         // Close the modal and show a success alert
         console.log(response.data);

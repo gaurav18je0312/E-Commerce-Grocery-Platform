@@ -67,7 +67,7 @@ function ProductHome({
           alt="product-image"
           className="product-img"
           width="100%"
-          onClick={() => navigate(`/home/product/${id}`)}
+          onClick={() => navigate(`/product/${id}`)}
         />
       </div>
       <div className="product-home-brand">{brand}</div>
