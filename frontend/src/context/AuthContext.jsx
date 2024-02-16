@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => {
       .then((response) => {
         const newaccess = response.data.access;
         setAuthToken({ access: newaccess, refresh: refresh });
-        localStorage.setItem("authTokens", JSON.stringify(AuthToken));
+        localStorage.setItem("authTokens", JSON.stringify({ access: newaccess, refresh: refresh }));
         console.log("token updated.");
         if (data.user===null) {
           console.log("user is null")
@@ -79,7 +79,9 @@ export const AuthProvider = ({ children }) => {
         }
       })
       .catch((error) => {
-        console.error(error.message);
+        console.error("token error: ", error.message);
+        setData({ ...data,  isloading:true});
+        navigate("/login/");
       });
   };
   // Initial effect to check for stored tokens and update if available
