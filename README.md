@@ -53,7 +53,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 - **frontend/**: Contains the React.js frontend code
 - **backend/**: Contains the Django backend code
-- **database/**: Contains the MySQL database setup
+- **db/**: Contains the MySQL database setup
 - **docker-compose.yml**: Docker Compose file to run the application
 
 ## Usage
